@@ -1,0 +1,238 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5fb;
+    color: #263445;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+header {
+    background: #2457a7;
+    color: white;
+    padding: 35px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+header p {
+    color: #e2eaff;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+}
+
+button {
+    background: #316ac5;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #194b96;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #2457a7;
+    margin-bottom: 15px;
+}
+
+section p {
+    margin: 12px 0;
+    color: #65758b;
+}
+
+.module {
+    display: none;
+}
+
+input {
+    padding: 12px;
+    margin: 8px;
+    width: 180px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+#stackDisplay,
+#queueDisplay,
+#singlyDisplay,
+#doublyDisplay,
+#circularDisplay,
+#hanoiDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 25px;
+    margin-top: 15px;
+    min-height: 80px;
+}
+
+.node {
+    background: #dceaff;
+    border: 2px solid #316ac5;
+    color: #194b96;
+    padding: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.disk {
+    margin: 5px auto;
+    height: 25px;
+    background: #316ac5;
+    border-radius: 6px;
+}
+
+#stackMessage,
+#queueMessage,
+#singlyMessage,
+#doublyMessage,
+#circularMessage,
+#hanoiMessage {
+    font-weight: bold;
+    color: #2457a7;
+}
+
+/* =================================
+   TOWER OF HANOI ANIMATION
+================================= */
+
+#hanoiBoard {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 330px;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8faff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.hanoi-base {
+    position: absolute;
+    bottom: 45px;
+    left: 8%;
+    width: 84%;
+    height: 12px;
+    background: #263445;
+    border-radius: 10px;
+}
+
+.hanoi-rod {
+    position: relative;
+    width: 30%;
+    height: 260px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 12px;
+    z-index: 2;
+}
+
+.hanoi-rod::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 235px;
+    background: #64748b;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.disk {
+    height: 27px;
+    border: 2px solid white;
+    border-radius: 7px;
+    margin-bottom: 2px;
+    transition: all 0.4s ease;
+    z-index: 3;
+}
+
+.rod-label {
+    position: absolute;
+    bottom: 12px;
+    font-weight: bold;
+    color: #2457a7;
+    font-size: 18px;
+}
+
+.label-a {
+    left: 16%;
+}
+
+.label-b {
+    left: 48%;
+}
+
+.label-c {
+    right: 16%;
+}
+
+#hanoiMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2457a7;
+    min-height: 25px;
+}
+
+@media (max-width: 600px) {
+    #hanoiBoard {
+        height: 280px;
+        padding: 10px;
+    }
+
+    .hanoi-rod {
+        height: 220px;
+    }
+
+    .hanoi-rod::before {
+        height: 195px;
+    }
+
+    .disk {
+        height: 23px;
+    }
+}

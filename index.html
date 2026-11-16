@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Data Structures Visualizer</h1>
+        <p>Learn Data Structures through Interactive Visualizations</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('stack')">Stack</button>
+        <button onclick="showSection('queue')">Queue</button>
+        <button onclick="showSection('singly')">Singly Linked List</button>
+        <button onclick="showSection('doubly')">Doubly Linked List</button>
+        <button onclick="showSection('circular')">Circular Linked List</button>
+        <button onclick="showSection('hanoi')">Tower of Hanoi</button>
+    </nav>
+
+    <main>
+        <section id="welcome">
+            <h2>Welcome!</h2>
+            <p>Select a data structure above to explore its operations.</p>
+        </section>
+
+        <section id="stack" class="module">
+            <h2>Stack</h2>
+            <p>Stack follows LIFO (Last In, First Out).</p>
+            <input type="number" id="stackValue" placeholder="Enter value">
+            <button onclick="pushStack()">Push</button>
+            <button onclick="popStack()">Pop</button>
+            <button onclick="peekStack()">Peek</button>
+            <div id="stackDisplay"></div>
+            <p id="stackMessage"></p>
+        </section>
+
+        <section id="queue" class="module">
+            <h2>Queue</h2>
+            <p>Queue follows FIFO (First In, First Out).</p>
+            <input type="number" id="queueValue" placeholder="Enter value">
+            <button onclick="enqueue()">Enqueue</button>
+            <button onclick="dequeue()">Dequeue</button>
+            <button onclick="frontQueue()">Front</button>
+            <div id="queueDisplay"></div>
+            <p id="queueMessage"></p>
+        </section>
+
+        <section id="singly" class="module">
+            <h2>Singly Linked List</h2>
+            <input type="number" id="singlyValue" placeholder="Enter value">
+            <input type="number" id="singlyPosition" placeholder="Position">
+            <button onclick="singlyInsertBeginning()">Insert Beginning</button>
+            <button onclick="singlyInsertEnd()">Insert End</button>
+            <button onclick="singlyInsertPosition()">Insert Position</button>
+            <button onclick="singlyDeleteBeginning()">Delete Beginning</button>
+            <button onclick="singlyDeleteEnd()">Delete End</button>
+            <button onclick="singlyDeletePosition()">Delete Position</button>
+            <button onclick="singlySearch()">Search</button>
+            <div id="singlyDisplay"></div>
+            <p id="singlyMessage"></p>
+        </section>
+
+        <section id="doubly" class="module">
+            <h2>Doubly Linked List</h2>
+            <input type="number" id="doublyValue" placeholder="Enter value">
+            <input type="number" id="doublyPosition" placeholder="Position">
+            <button onclick="doublyInsertBeginning()">Insert Beginning</button>
+            <button onclick="doublyInsertEnd()">Insert End</button>
+            <button onclick="doublyInsertPosition()">Insert Position</button>
+            <button onclick="doublyDeleteBeginning()">Delete Beginning</button>
+            <button onclick="doublyDeleteEnd()">Delete End</button>
+            <button onclick="doublyDeletePosition()">Delete Position</button>
+            <button onclick="doublyForward()">Forward</button>
+            <button onclick="doublyBackward()">Backward</button>
+            <div id="doublyDisplay"></div>
+            <p id="doublyMessage"></p>
+        </section>
+
+        <section id="circular" class="module">
+            <h2>Circular Linked List</h2>
+            <input type="number" id="circularValue" placeholder="Enter value">
+            <input type="number" id="circularPosition" placeholder="Position">
+            <button onclick="circularInsertBeginning()">Insert Beginning</button>
+            <button onclick="circularInsertEnd()">Insert End</button>
+            <button onclick="circularInsertPosition()">Insert Position</button>
+            <button onclick="circularDeleteBeginning()">Delete Beginning</button>
+            <button onclick="circularDeleteEnd()">Delete End</button>
+            <button onclick="circularDeletePosition()">Delete Position</button>
+            <button onclick="circularSearch()">Search</button>
+            <button onclick="displayCircular()">Display</button>
+            <div id="circularDisplay"></div>
+            <p id="circularMessage"></p>
+        </section>
+
+        
+<section id="hanoi" class="module">
+    <h2>Tower of Hanoi</h2>
+
+    <p>Move all disks from Rod A to Rod C.</p>
+    <p>Only one disk can be moved at a time.</p>
+    <p>A larger disk cannot be placed on a smaller disk.</p>
+
+    <input type="number" id="hanoiValue"
+           placeholder="Number of disks"
+           min="1" max="6">
+
+    <button onclick="startHanoi()">Start Animation</button>
+    <button onclick="resetHanoi()">Reset</button>
+
+    <div id="hanoiBoard">
+        <div class="hanoi-base"></div>
+
+        <div class="hanoi-rod" id="rodA"></div>
+        <div class="hanoi-rod" id="rodB"></div>
+        <div class="hanoi-rod" id="rodC"></div>
+
+        <div class="rod-label label-a">A</div>
+        <div class="rod-label label-b">B</div>
+        <div class="rod-label label-c">C</div>
+    </div>
+
+    <p id="hanoiMessage">Enter the number of disks and press Start.</p>
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
